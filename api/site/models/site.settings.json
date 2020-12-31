@@ -1,0 +1,98 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sites",
+  "info": {
+    "name": "site",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "accomodation": {
+      "type": "string"
+    },
+    "tent_type": {
+      "type": "string"
+    },
+    "food_accomodation": {
+      "type": "string"
+    },
+    "latitude": {
+      "type": "float"
+    },
+    "longitude": {
+      "type": "float"
+    },
+    "address_one": {
+      "type": "string"
+    },
+    "address_two": {
+      "type": "string"
+    },
+    "address_three": {
+      "type": "string"
+    },
+    "postcode": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "toilet_accomodation": {
+      "type": "string"
+    },
+    "plugpoint_accomodation": {
+      "type": "string"
+    },
+    "kitchensink_accomodation": {
+      "type": "string"
+    },
+    "firepit_accomodation": {
+      "type": "string"
+    },
+    "adventure_type": {
+      "type": "string"
+    },
+    "attraction": {
+      "type": "string"
+    },
+    "entrance": {
+      "type": "string"
+    },
+    "parking_distance": {
+      "type": "string"
+    },
+    "campervan_compatibility": {
+      "type": "string"
+    },
+    "equipment_provided": {
+      "type": "string"
+    },
+    "photos": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "state": {
+      "type": "string"
+    }
+  }
+}
