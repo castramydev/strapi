@@ -2,48 +2,48 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/sites",
-      "handler": "site.find",
+      "path": "/places",
+      "handler": "places.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/sites/count",
-      "handler": "site.count",
+      "path": "/places/count",
+      "handler": "places.count",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/sites/:id",
-      "handler": "site.findOne",
+      "path": "/places/:id",
+      "handler": "places.findOne",
       "config": {
         "policies": []
       }
     },
     {
       "method": "POST",
-      "path": "/sites",
-      "handler": "site.create",
+      "path": "/places",
+      "handler": "places.create",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/sites/:id",
-      "handler": "site.update",
+      "path": "/places/:id",
+      "handler": "places.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/sites/:id",
-      "handler": "site.delete",
+      "path": "/places/:id",
+      "handler": "places.delete",
       "config": {
         "policies": []
       }

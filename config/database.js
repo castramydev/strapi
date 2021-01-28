@@ -1,20 +1,21 @@
 module.exports = ({ env }) => ({
-  defaultConnection: 'default',
+  defaultConnection: "default",
   connections: {
     default: {
-      connector: 'mongoose',
+      connector: "mongoose",
       settings: {
-        host: env('DATABASE_HOST', 'cluster0.emb4q.mongodb.net'),
-        srv: env.bool('DATABASE_SRV', true),
-        port: env.int('DATABASE_PORT', 27017),
-        database: env('DATABASE_NAME', 'PROJECT'),
-        username: env('DATABASE_USERNAME', 'admin'),
-        password: env('DATABASE_PASSWORD', 'Castra3112#'),
+        host: env("DATABASE_HOST", "cluster0.emb4q.mongodb.net"),
+        srv: env.bool("DATABASE_SRV", true),
+        port: env.int("DATABASE_PORT", 27017),
+        database: env("DATABASE_NAME", "PROJECT"),
+        username: env("DATABASE_USERNAME", "admin"),
+        password: env("DATABASE_PASSWORD", "Castra3112#"),
       },
       options: {
-        authenticationDatabase: env('AUTHENTICATION_DATABASE', null),
-        ssl: env.bool('DATABASE_SSL', true),
+        authenticationDatabase: env("AUTHENTICATION_DATABASE", null),
+        ssl: env.bool("DATABASE_SSL", true),
       },
     },
   },
 });
+

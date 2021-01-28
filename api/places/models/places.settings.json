@@ -1,18 +1,16 @@
 {
   "kind": "collectionType",
-  "collectionName": "sites",
+  "collectionName": "places",
   "info": {
-    "name": "site",
-    "description": ""
+    "name": "Places"
   },
   "options": {
     "increments": true,
-    "timestamps": true,
     "draftAndPublish": true
   },
   "attributes": {
     "name": {
-      "type": "string"
+      "type": "text"
     },
     "type": {
       "type": "string"
@@ -21,13 +19,13 @@
       "type": "richtext"
     },
     "accomodation": {
-      "type": "string"
+      "type": "text"
     },
     "tent_type": {
-      "type": "string"
+      "type": "text"
     },
     "food_accomodation": {
-      "type": "string"
+      "type": "text"
     },
     "latitude": {
       "type": "float"
@@ -36,49 +34,49 @@
       "type": "float"
     },
     "address_one": {
-      "type": "string"
+      "type": "text"
     },
     "address_two": {
-      "type": "string"
+      "type": "text"
     },
     "address_three": {
-      "type": "string"
+      "type": "text"
     },
     "postcode": {
-      "type": "string"
+      "type": "text"
     },
     "city": {
-      "type": "string"
+      "type": "text"
     },
     "toilet_accomodation": {
-      "type": "string"
+      "type": "text"
     },
     "plugpoint_accomodation": {
-      "type": "string"
+      "type": "text"
     },
     "kitchensink_accomodation": {
-      "type": "string"
+      "type": "text"
     },
     "firepit_accomodation": {
-      "type": "string"
+      "type": "text"
     },
     "adventure_type": {
-      "type": "string"
+      "type": "text"
     },
     "attraction": {
-      "type": "string"
+      "type": "text"
     },
     "entrance": {
-      "type": "string"
+      "type": "text"
     },
     "parking_distance": {
-      "type": "string"
+      "type": "text"
     },
     "campervan_compatibility": {
-      "type": "string"
+      "type": "text"
     },
     "equipment_provided": {
-      "type": "string"
+      "type": "text"
     },
     "photos": {
       "collection": "file",
@@ -92,7 +90,7 @@
       "required": false
     },
     "state": {
-      "type": "string"
+      "type": "text"
     }
   }
 }

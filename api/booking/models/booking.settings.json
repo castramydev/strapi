@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bookings",
+  "info": {
+    "name": "Booking"
+  },
+  "options": {
+    "increments": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "user_id": {
+      "type": "string",
+      "unique": true
+    },
+    "status": {
+      "type": "string"
+    },
+    "contact_no": {
+      "type": "biginteger"
+    }
+  }
+}

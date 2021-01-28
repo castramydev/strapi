@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reviews",
+  "info": {
+    "name": "review"
+  },
+  "options": {
+    "increments": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "place_id": {
+      "type": "text"
+    },
+    "rating_stars": {
+      "type": "integer"
+    },
+    "comments": {
+      "type": "text"
+    }
+  }
+}
