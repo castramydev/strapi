@@ -12,9 +12,10 @@
   "devDependencies": {},
   "dependencies": {
     "circular-json": "^0.5.9",
+    "crypto-js": "^4.0.0",
     "flatted": "^3.1.0",
     "knex": "^0.21.15",
-    "mysql": "^5.6.5",
+    "mysql": "^2.18.1",
     "node-rsa": "^1.1.1",
     "strapi": "3.2.5",
     "strapi-admin": "3.2.5",

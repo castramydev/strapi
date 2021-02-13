@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "bookings",
   "info": {
-    "name": "Booking"
+    "name": "Booking",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -11,13 +12,28 @@
   "attributes": {
     "user_id": {
       "type": "string",
-      "unique": true
+      "unique": false
     },
-    "status": {
+    "payment_status": {
       "type": "string"
     },
     "contact_no": {
       "type": "biginteger"
+    },
+    "site_id": {
+      "type": "text"
+    },
+    "package_id": {
+      "type": "text"
+    },
+    "booking_price": {
+      "type": "decimal"
+    },
+    "booking_details": {
+      "type": "text"
+    },
+    "Total_price": {
+      "type": "decimal"
     }
   }
 }

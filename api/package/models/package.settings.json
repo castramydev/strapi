@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "packages",
+  "info": {
+    "name": "Package"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "site_id": {
+      "type": "text"
+    },
+    "package_name": {
+      "type": "text"
+    },
+    "package_details": {
+      "type": "text"
+    },
+    "package_price": {
+      "type": "decimal"
+    }
+  }
+}

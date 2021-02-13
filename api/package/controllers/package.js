@@ -1,10 +1,10 @@
 'use strict';
+const { sanitizeEntity } = require("strapi-utils");
 const CryptoJS = require("crypto-js");
 const scrtkey = "cstra123#";
-const { sanitizeEntity } = require("strapi-utils");
 
 /**
- * Read the documentation (https://strapi.io/documentation/developer-docs/latest/concepts/controllers.html#core-controllers)
+ * Read the documentation (https://strapi.io/documentation/v3.x/concepts/controllers.html#core-controllers)
  * to customize this controller
  */
 
@@ -12,14 +12,14 @@ module.exports = {
   find: async (ctx) => {
     let entities;
     if (ctx.query._q) {
-      entities = await strapi.services.places.search(ctx.query);
-      let tryEntity = sanitizeEntity(entities, { model: strapi.models.places });
+      entities = await strapi.services.package.search(ctx.query);
+      let tryEntity = sanitizeEntity(entities, { model: strapi.models.package });
       var jsons = JSON.stringify(tryEntity);
       var encryptedData = CryptoJS.AES.encrypt(jsons,scrtkey).toString();
       return encryptedData;
     } else {
-      entities = await strapi.services.places.find(ctx.query);
-      let tryEntity = sanitizeEntity(entities, { model: strapi.models.places });
+      entities = await strapi.services.package.find(ctx.query);
+      let tryEntity = sanitizeEntity(entities, { model: strapi.models.package });
       var jsons = JSON.stringify(tryEntity);
       var encryptedData = CryptoJS.AES.encrypt(jsons,scrtkey).toString();
       return encryptedData;
@@ -28,8 +28,8 @@ module.exports = {
 
   findOne: async (ctx) => {
     const { id } = ctx.params;
-    const entity = await strapi.services.places.findOne({ id });
-    let tryEntity = sanitizeEntity(entity, { model: strapi.models.places });
+    const entity = await strapi.services.package.findOne({ id });
+    let tryEntity = sanitizeEntity(entity, { model: strapi.models.package });
     var jsons = JSON.stringify(tryEntity);
     var encryptedData = CryptoJS.AES.encrypt(jsons,scrtkey).toString();
     return encryptedData;
@@ -41,18 +41,15 @@ module.exports = {
    let entity;
    if (ctx.is("multipart")) {
      const { data, files } = parseMultipartData(ctx);
-     entity = await strapi.services.places.update({ id }, data, {
+     entity = await strapi.services.package.update({ id }, data, {
        files,
      });
    } else {
-     entity = await strapi.services.places.update({ id }, ctx.request.body);
-     let tryEntity = sanitizeEntity(entity, { model: strapi.models.places });
-     var jsons = JSON.stringify(tryEntity);
-     var encryptedData = CryptoJS.AES.encrypt(jsons,scrtkey).toString();
+
+     entity = await strapi.services.package.update({ id }, ctx.request.body);
      var resMessage = {};
      resMessage.status = 200;
-     resMessage.message = tryEntity.name + " updated successfully!";
-     resMessage.body = encryptedData;
+     resMessage.message = entity.package_name + " updated successfully!";
      return JSON.stringify(resMessage);
    }
   },
@@ -61,10 +58,10 @@ module.exports = {
     let entity;
     if (ctx.is('multipart')) {
       const { data, files } = parseMultipartData(ctx);
-      entity = await strapi.services.places.create(data, { files });
+      entity = await strapi.services.package.create(data, { files });
     } else {
-      entity = await strapi.services.places.create(ctx.request.body);
-      let tryEntity = sanitizeEntity(entity, { model: strapi.models.places });
+      entity = await strapi.services.package.create(ctx.request.body);
+      let tryEntity = sanitizeEntity(entity, { model: strapi.models.package });
       var jsons = JSON.stringify(tryEntity);
       var encryptedData = CryptoJS.AES.encrypt(jsons,scrtkey).toString();
       var resMessage = {};
@@ -77,11 +74,11 @@ module.exports = {
 
   delete: async (ctx) => {
     const { id } = ctx.params;
-    const entity = await strapi.services.places.delete({ id });
+    const entity = await strapi.services.package.delete({ id });
     if(entity){
       var resMessage = {};
       resMessage.status = 200;
-      resMessage.message = "Campsite deleted successfully!";
+      resMessage.message = "Package deleted successfully!";
       return JSON.stringify(resMessage);
     }
     else{

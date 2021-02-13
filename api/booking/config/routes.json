@@ -18,8 +18,16 @@
     },
     {
       "method": "GET",
-      "path": "/getBank",
+      "path": "/getBankFPX",
       "handler": "Booking.index",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/getBank",
+      "handler": "Booking.getBank",
       "config": {
         "policies": []
       }
